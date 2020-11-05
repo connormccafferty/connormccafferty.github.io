@@ -4,12 +4,12 @@
     "contextMenu": true,
     "name": "window-focused-indicator",
     "uuid": "window-focused-indicator",
-    "url": "https://connormccafferty.github.io/index.html",
+    "url": "https://connormccafferty.github.io/window-focus-indicator/index.html",
     "autoShow": true,
     "saveWindowState": false,
     "preloadScripts": [
       {
-        "url": "https://connormccafferty.github.io/focusedIndicator.js"
+        "url": "https://connormccafferty.github.io/window-focus-indicator/ocusedIndicator.js"
       }
     ]
   },
