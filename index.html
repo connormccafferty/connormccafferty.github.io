@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>ticket 12696</title>
+</head>
+
+<body>
+  <p>Version: <span id="of-version"></span></p>
+  <button id="create-window">window++</button>
+</body>
+<script>
+  const ofVersion = document.getElementById("of-version");
+  const createBtn = document.getElementById('create-window');
+
+  createBtn.addEventListener('click', async (e) => {
+    e.preventDefault();
+    try {
+      await fin.Window.create({
+        name: `child-${Date.now()}`,
+        url: `https://openfin.co`,
+        preloadScripts: [{ url: "http://localhost:5555/focusedIndicator.js" }]
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  })
+
+  if (typeof fin !== "undefined") {
+    fin.System.getVersion()
+      .then((v) => (ofVersion.textContent = v))
+      .catch(console.error);
+
+  } else {
+    ofVersion.textContent = "You are probably running in a browser.";
+  }
+</script>
+
+</html>
